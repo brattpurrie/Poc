@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blitz Speed Reader</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.338/pdf.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Blitz Reader (PWA)</h2>
+
+<label id="uploadLabel">📄 Upload PDF</label>
+<input type="file" id="pdfUpload" accept="application/pdf">
+
+<div>
+  <button id="startBtn">Start</button>
+  <button id="pauseBtn">Pause</button>
+</div>
+
+<div id="readerContainer">
+  <div id="reader">Your word will appear here</div>
+  <div id="wpmOverlay"></div>
+  <div id="readingTime">Estimated time: 0 min</div>
+  <div id="minimap"></div>
+</div>
+
+<textarea id="textInput" style="display:none;"></textarea>
+
+<script src="reader.js"></script>
+<script>
+// Register service worker
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js').then(()=>console.log('SW registered'));
+}
+</script>
+</body>
+</html>
