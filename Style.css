@@ -1,0 +1,30 @@
+body { font-family:'Consolas','Courier New', monospace; margin:20px; }
+#readerContainer { display:flex; flex-direction:column; align-items:center; }
+#reader {
+  width:100%; max-width:600px; height:200px;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden; border:1px solid #ccc; position:relative; font-size:36px;
+  margin-top:10px;
+}
+.word-wrapper { position:absolute; top:50%; display:flex; transform:translateY(-50%);}
+.word-before,.word-after { white-space:pre; }
+.orp { color:red; flex-shrink:0; }
+#minimap { width:60px; max-height:150px; overflow-y:auto; font-size:6px; line-height:1em; border:1px solid #ccc; cursor:pointer; margin-top:10px;}
+#wpmOverlay { position:absolute; top:10px; right:10px; background:rgba(0,0,0,0.5); color:#fff; padding:5px 10px; border-radius:5px; font-size:16px; display:none; z-index:10;}
+#readingTime { margin-top:5px; font-size:14px;}
+#uploadLabel {
+  display:inline-block;
+  padding:8px 16px;
+  background:#007BFF;
+  color:#fff;
+  border-radius:5px;
+  cursor:pointer;
+  transition: background 0.2s;
+  margin-bottom:10px;
+}
+#uploadLabel:hover { background:#0056b3; }
+#pdfUpload { display:none; }
+@media(max-width:600px){
+  #reader { font-size:28px; height:150px; }
+  #minimap { width:100%; max-height:100px; }
+}
